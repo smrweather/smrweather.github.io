@@ -39,7 +39,7 @@
 <!-- 📍 Weather Marker with Icon and Animation -->
 <span id="sanMateoMarker" class="position-absolute fade-in"
   style="
-    top: 36.5%; left: 56.8%; transform: translate(-50%, -50%);
+    top: 12%; left: 56.9%; transform: translate(-50%, -50%);
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
@@ -53,13 +53,15 @@
   <!-- Windy Iframe Map -->
   <iframe id="windy" class="w-100" style="height: 100vh; border: none;" allowfullscreen></iframe>
 
-  <!-- Weather Info Button -->
-  <button class="btn btn-warning position-fixed top-70 end-0 m-3" onclick="showWeatherPopup()">📍 Weather Info</button>
-</div>
+<!-- 📍 Weather Info Button Floating (Bottom Right on Mobile) -->
+<button class="btn btn-warning position-fixed end-0 btn-weather m-2 shadow"
+  onclick="showWeatherPopup()">
+  📍 Weather Info
+</button>
 
-<!-- 🔄 Floating Refresh Button -->
+<!-- 🔄 Refresh Floating Button (Sticky on Scroll) -->
 <button id="refreshBtn"
-  class="btn btn-outline-primary btn-sm position-fixed top-0 end-0 m-3 z-3 shadow"
+  class="btn btn-outline-primary position-fixed top-0 end-0 m-2 btn-sm shadow"
   onclick="refreshSanMateoWeather()">
   🔄 Refresh Weather
 </button>
