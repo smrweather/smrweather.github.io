@@ -38,3 +38,53 @@ body {
   from { opacity: 0; transform: translate(-50%, -60%) scale(0.9); }
   to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
+
+ /* Weather marker responsive style */
+ #sanMateoMarker {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  #sanMateoMarker {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ensure map fills mobile screen */
+#windy {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
+
+/* Floating buttons on mobile */
+#refreshBtn, .btn-weather {
+  z-index: 1050;
+  font-size: 0.9rem;
+}
+
+.btn-weather {
+  bottom: 80px;
+}
+
+/* Weather cards responsive stack */
+.weather-card {
+  min-width: 140px;
+  flex: 1 1 45%;
+}
+
+@media (min-width: 768px) {
+  .weather-card {
+    flex: 1 1 18%;
+  }
+}
+
+/* Chart responsiveness */
+canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
+table th, table td {
+  font-size: 0.875rem;
+}
