@@ -283,6 +283,9 @@ fetch(apiUrl)
    return "🌤️"; // default
 }
 
+
+// Main weather updater
+function refreshSanMateoWeather() {
 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
   .then(res => res.json())
   .then(data => {
@@ -291,4 +294,14 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&app
     const label = document.getElementById("sanMateoMarker");
     label.innerHTML = `📍 San Mateo ${temp}° ${icon}`;
     label.style.opacity = 1;
+
+
+    // ✅ Show success toast
+    const toast = new bootstrap.Toast(document.getElementById('refreshToast'));
+    toast.show();
   });
+}
+
+
+// Initial load
+refreshSanMateoWeather();
