@@ -2,16 +2,6 @@ const lat = 14.695151709155798;
 const lon = 121.11788215916273;
 const apiKey = "662bc47b0b806958a77b4b260951abb8";
 
-// function updateWindyMap(layer) {
-//   const url = `https://embed.windy.com/embed2.html?lat=${lat}&lon=${lon}&detailLat=${lat}&detailLon=${lon}&zoom=18&level=surface&overlay=${layer}&menu=true&message=true&marker=true&calendar=off&pressure=true&type=map&location=coordinates&detail=true&metricWind=default&metricTemp=default`;
-//   document.getElementById("windy").src = url;
-// }
-
-// document.getElementById("layerSelect").addEventListener("change", (e) => {
-//   updateWindyMap(e.target.value);
-// });
-
-// updateWindyMap("clouds");
 
 // Weather Cards
 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
@@ -121,6 +111,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&app
     const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     [...tooltips].forEach(el => new bootstrap.Tooltip(el));
   });
+
    // Forecast Charts
    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
     .then(res => res.json())
