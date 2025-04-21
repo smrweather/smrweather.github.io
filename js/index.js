@@ -2,16 +2,16 @@ const lat = 14.695151709155798;
 const lon = 121.11788215916273;
 const apiKey = "662bc47b0b806958a77b4b260951abb8";
 
-function updateWindyMap(layer) {
-  const url = `https://embed.windy.com/embed2.html?lat=${lat}&lon=${lon}&detailLat=${lat}&detailLon=${lon}&zoom=18&level=surface&overlay=${layer}&menu=true&message=true&marker=true&calendar=off&pressure=true&type=map&location=coordinates&detail=true&metricWind=default&metricTemp=default`;
-  document.getElementById("windy").src = url;
-}
+// function updateWindyMap(layer) {
+//   const url = `https://embed.windy.com/embed2.html?lat=${lat}&lon=${lon}&detailLat=${lat}&detailLon=${lon}&zoom=18&level=surface&overlay=${layer}&menu=true&message=true&marker=true&calendar=off&pressure=true&type=map&location=coordinates&detail=true&metricWind=default&metricTemp=default`;
+//   document.getElementById("windy").src = url;
+// }
 
-document.getElementById("layerSelect").addEventListener("change", (e) => {
-  updateWindyMap(e.target.value);
-});
+// document.getElementById("layerSelect").addEventListener("change", (e) => {
+//   updateWindyMap(e.target.value);
+// });
 
-updateWindyMap("clouds");
+// updateWindyMap("clouds");
 
 // Weather Cards
 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
@@ -228,19 +228,19 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&app
     });
 
 
-    function showWeatherPopup() {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=14.695151709155798&lon=121.11788215916273&appid=662bc47b0b806958a77b4b260951abb8&units=metric`)
-            .then(res => res.json()) // parse the response
-            .then(data => {
-            const html = `
-                <p><strong>Temp:</strong> ${data.main.temp} °C</p>
-                <p><strong>Feels Like:</strong> ${data.main.feels_like} °C</p>
-                <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
-                <p><strong>Condition:</strong> ${data.weather[0].description}</p>`;
-            document.getElementById("modalWeatherInfo").innerHTML = html;
-            new bootstrap.Modal(document.getElementById("weatherModal")).show();
-            });
-        }
+    // function showWeatherPopup() {
+    //     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=14.695151709155798&lon=121.11788215916273&appid=662bc47b0b806958a77b4b260951abb8&units=metric`)
+    //         .then(res => res.json()) // parse the response
+    //         .then(data => {
+    //         const html = `
+    //             <p><strong>Temp:</strong> ${data.main.temp} °C</p>
+    //             <p><strong>Feels Like:</strong> ${data.main.feels_like} °C</p>
+    //             <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
+    //             <p><strong>Condition:</strong> ${data.weather[0].description}</p>`;
+    //         document.getElementById("modalWeatherInfo").innerHTML = html;
+    //         new bootstrap.Modal(document.getElementById("weatherModal")).show();
+    //         });
+    //     }
 
 
 
@@ -274,34 +274,34 @@ fetch(apiUrl)
     }).join('');
   });
 
-  function getWeatherEmoji(condition) {
-  const lower = condition.toLowerCase();
-  if (lower.includes("rain")) return "🌧️";
-  if (lower.includes("cloud")) return "⛅";
-  if (lower.includes("clear")) return "☀️";
-  if (lower.includes("thunder")) return "🌩️";
-   return "🌤️"; // default
-}
+//   function getWeatherEmoji(condition) {
+//   const lower = condition.toLowerCase();
+//   if (lower.includes("rain")) return "🌧️";
+//   if (lower.includes("cloud")) return "⛅";
+//   if (lower.includes("clear")) return "☀️";
+//   if (lower.includes("thunder")) return "🌩️";
+//    return "🌤️"; // default
+// }
 
 
 // Main weather updater
-function refreshSanMateoWeather() {
-fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
-  .then(res => res.json())
-  .then(data => {
-    const temp = Math.round(data.main.temp);
-    const icon = getWeatherEmoji(data.weather[0].description);
-    const label = document.getElementById("sanMateoMarker");
-    label.innerHTML = `📍 San Mateo ${temp}° ${icon}`;
-    label.style.opacity = 1;
+// function refreshSanMateoWeather() {
+// fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+//   .then(res => res.json())
+//   .then(data => {
+//     const temp = Math.round(data.main.temp);
+//     const icon = getWeatherEmoji(data.weather[0].description);
+//     const label = document.getElementById("sanMateoMarker");
+//     label.innerHTML = `📍 San Mateo ${temp}° ${icon}`;
+//     label.style.opacity = 1;
 
 
-    // ✅ Show success toast
-    const toast = new bootstrap.Toast(document.getElementById('refreshToast'));
-    toast.show();
-  });
-}
+//     // ✅ Show success toast
+//     const toast = new bootstrap.Toast(document.getElementById('refreshToast'));
+//     toast.show();
+//   });
+// }
 
 
-// Initial load
-refreshSanMateoWeather();
+// // Initial load
+// refreshSanMateoWeather();
