@@ -1,10 +1,10 @@
 body {
     background: #f0f2f5;
   }
-  #windy {
+/*   #windy {
     height: 600px;
     border: none;
-  }
+  } */
   .weather-card {
     width: 100%;
     max-width: 120px;
@@ -24,17 +24,17 @@ body {
     margin: 2rem 0 1rem;
   }
 
-  #windy {
+/*   #windy {
     width: 100%;
     height: 100vh; /* Full viewport height */
     border: none;
-  }
+  } */
 
   .fade-in {
   animation: fadeIn 2s ease-in-out forwards;
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -60%) scale(0.9); }
   to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
@@ -49,15 +49,15 @@ body {
     font-size: 1.5rem;
   }
 }
-
-/* Ensure map fills mobile screen */
+ */
+/* /* Ensure map fills mobile screen */
 #windy {
   width: 100%;
   height: 100vh;
   border: none;
-}
+} */
 
-/* Floating buttons on mobile */
+/* /* Floating buttons on mobile */
 #refreshBtn, .btn-weather {
   z-index: 1050;
   font-size: 0.9rem;
@@ -65,7 +65,7 @@ body {
 
 .btn-weather {
   bottom: 80px;
-}
+} */
 
 /* Weather cards responsive stack */
 .weather-card {
