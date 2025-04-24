@@ -20,7 +20,7 @@
   <!-- Weather Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css"  />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons-wind.min.css" />
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="/css/index.css" />
 
   <!-- Chart.js & Datalabels -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -40,10 +40,10 @@
 </head>
 <body>
   
- <button class="btn btn-warning position-fixed end-0 btn-weather m-2 shadow"
+ <!-- <button class="btn btn-warning position-fixed end-0 btn-weather m-4 shadow"
   onclick="showWeatherPopup()">
   📍 Weather Info
-</button> 
+</button>  -->
 
 <div class="position-fixed bottom-0 end-0 p-3 z-3" style="z-index: 9999">
   <div id="refreshToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
@@ -56,7 +56,7 @@
   </div>
 </div>
 
-
+<br><br><br>
 <div class="d-flex flex-wrap justify-content-center gap-3 px-3" id="weatherCardRow"></div>
 
 <div class="container">
