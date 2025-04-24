@@ -265,26 +265,17 @@ fetch(apiUrl)
     }).join('');
   });
 
-//   function getWeatherEmoji(condition) {
-//   const lower = condition.toLowerCase();
-//   if (lower.includes("rain")) return "🌧️";
-//   if (lower.includes("cloud")) return "⛅";
-//   if (lower.includes("clear")) return "☀️";
-//   if (lower.includes("thunder")) return "🌩️";
-//    return "🌤️"; // default
-// }
 
 
-//Main weather updater
 function refreshSanMateoWeather() {
 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
   .then(res => res.json())
   .then(data => {
-    // const temp = Math.round(data.main.temp);
-    // const icon = getWeatherEmoji(data.weather[0].description);
-    // const label = document.getElementById("sanMateoMarker");
-    // label.innerHTML = `📍 San Mateo ${temp}° ${icon}`;
-    // label.style.opacity = 1;
+    const temp = Math.round(data.main.temp);
+    const icon = getWeatherEmoji(data.weather[0].description);
+    const label = document.getElementById("sanMateoMarker");
+    label.innerHTML = `📍 San Mateo ${temp}° ${icon}`;
+    label.style.opacity = 1;
 
 
     // ✅ Show success toast
