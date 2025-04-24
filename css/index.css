@@ -1,12 +1,11 @@
 body {
-    background: #f0f2f5;
+    background-color: #808588;
   }
-/*   #windy {
-    height: 600px;
-    border: none;
-  } */
+
   .weather-card {
     width: 100%;
+    border-top: 200px;
+    border-color: #48494B;
     max-width: 120px;
     flex: 1 1 auto;
     min-height: 40px;
@@ -30,38 +29,12 @@ body {
   animation: fadeIn 2s ease-in-out forwards;
 }
 
-/* @keyframes fadeIn {
+ @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -60%) scale(0.9); }
   to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-}
+} 
 
- /* Weather marker responsive style */
- #sanMateoMarker {
-  font-size: 1.2rem;
-}
 
-@media (min-width: 768px) {
-  #sanMateoMarker {
-    font-size: 1.5rem;
-  }
-}
- */
-/* /* Ensure map fills mobile screen */
-#windy {
-  width: 100%;
-  height: 100vh;
-  border: none;
-} */
-
-/* /* Floating buttons on mobile */
-#refreshBtn, .btn-weather {
-  z-index: 1050;
-  font-size: 0.9rem;
-}
-
-.btn-weather {
-  bottom: 80px;
-} */
 
 /* Weather cards responsive stack */
 .weather-card {
